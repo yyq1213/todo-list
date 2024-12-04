@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "待办事项",
+  "short_name": "待办事项",
+  "version": "1.0",
+  "description": "待办事项",
+  "action": {
+    "default_popup": "index.html"
+  },
+ 
+  "permissions": [
+    "activeTab"
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
