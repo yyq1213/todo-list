@@ -52,5 +52,6 @@ onChange={() => onToggleTodo(index)}
 </List>
 ```
 Buttond的color可以直接设置为 'primary'、'secondary'、'default' 等预定义的颜色值，或者自定义。
-![输入图片说明](/imgs/2024-12-19/Ca56YolQO9x73QiB.png)
+![image](https://github.com/user-attachments/assets/e00f6090-5e05-4875-a40e-6553c7d7061c)
+
 
