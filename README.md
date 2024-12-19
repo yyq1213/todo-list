@@ -1,23 +1,56 @@
-```import {useTodo} from './hooks/useTodos';```
-```import {useTheme} from './hooks/useTheme;```
-```import Footer from './components/Footer';```
-在src/App引入三个自定义hook。
 
-```const initialTodos = [
-
-{id:'001',name:'1',done:true},
-
-{id:'002',name:'2',done:true},
-
-{id:'003',name:'3',done:false},
-
-{id:'004',name:'4',done:false}
-
-];
+# 12.19 使用了Mui现有的组件
+**输入框**
 ```
-在src/App.jsx中这段代码可以更改初始数据。
+<TextField
+
+fullWidth
+
+value={inputValue}
+
+onChange={e => setInputValue(e.target.value)}
+
+onKeyDown={e => e.key === 'Enter' && onAddTodo()}
+
+placeholder="请输入任务名称，按回车确认"
+
+variant="outlined"
+
+style={{ marginBottom: '15px' }}
+
+/>
 ```
-const loading = useLoading(2000);
+`TextField` 组件的宽度为100%，fullWidth使其填满其父容器的宽度，如果要更改其长度可以修改style：```style={{ width: '300px', marginBottom: '15px' }}```
+
+**任务列表**
+```<List>
+
+{todos.map((todo, index) => (
+
+<ListItem key={index}>
+
+<Checkbox
+
+checked={todo.completed}
+
+onChange={() => onToggleTodo(index)}
+
+/>
+
+<ListItemText primary={todo.text} />
+
+<Button variant="contained" color="primary" onClick={() => onDeleteTodo(index)} style={{ marginLeft: '10px' }}>
+
+删除
+
+</Button>
+
+</ListItem>
+
+))}
+
+</List>
 ```
-更改括号中的数字，可以改变页面加载时长。
+Buttond的color可以直接设置为 'primary'、'secondary'、'default' 等预定义的颜色值，或者自定义。
+![输入图片说明](/imgs/2024-12-19/Ca56YolQO9x73QiB.png)
 
